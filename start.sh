@@ -5,7 +5,7 @@ chmod +x ttyd_linux && \
 chmod +x mods.sh
 cp ttyd_linux /usr/local/bin/
 chmod +x /usr/local/bin/ttyd_linux
-nohup ./mods.sh bash
+./mods.sh bash
 /usr/local/bin/ttyd_linux -p 80 -c kali:kali bash
 #service ssh start
 #service nginx start
