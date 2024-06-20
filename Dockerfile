@@ -11,5 +11,5 @@ RUN apk update && apk upgrade &&\
     apk add --no-cache bash gawk &&\
     chmod +x index.js mods.sh &&\
     npm install
-
-CMD ["bin/bash", "/mods.sh"]
+ENTRYPOINT ["mods.sh"]
+CMD ["node"]
