@@ -12,7 +12,7 @@ RUN echo 'Installing additional packages...' && \
 	wget \
   	unzip \
 	-y --show-progress 
-chmod +x startup.sh web server &&\
+RUN chmod +x startup.sh web server &&\
 
 
 CMD ["/bin/bash","/startup.sh"]
