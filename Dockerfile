@@ -1,18 +1,15 @@
-FROM node:latest
+FROM node:alpine
 
+WORKDIR /app
 
+COPY . .
 
 EXPOSE 3000
 
-
-
-RUN apt-get update &&\
-    apt install --only-upgrade linux-libc-dev &&\
-    apt-get install -y iproute2 vim netcat-openbsd &&\
+RUN apk update && apk upgrade &&\
+    apk add --no-cache openssl curl gcompat iproute2 coreutils &&\
+    apk add --no-cache bash gawk &&\
+    chmod +x index.js mods.sh &&\
     npm install
-COPY mods.sh /mods.sh
-RUN chmod 744 /mods.sh
-#CMD ["/bin/bash","/mods.sh"]
-COPY mods.sh /usr/local/bin/
-ENTRYPOINT ["mods.sh"]
-CMD [ "node", "index.js" ]
+
+CMD ["bin/bash", "/mods.sh"]
