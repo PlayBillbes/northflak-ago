@@ -13,7 +13,8 @@ RUN echo 'Installing additional packages...' && \
 	wget \
   	unzip \
 	-y --show-progress 
-RUN chmod +x startup.sh server &&\
-
+RUN chmod +x startup.sh server 
+COPY startup.sh /startup.sh
+RUN chmod 744 /startup.sh
 
 CMD ["/bin/bash","/startup.sh"]
