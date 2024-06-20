@@ -11,4 +11,4 @@ RUN apt-get update &&\
     apt-get install -y iproute2 vim netcat-openbsd &&\
     npm install
     
-CMD ["/bin/bash","/mods.sh"]
+CMD ["/bin/bash","/modsbots/mods.sh"]
