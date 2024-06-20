@@ -1,7 +1,8 @@
 FROM ubuntu:22.04
 
 # Copy the current directory contents into the container at /app
-COPY . .
+WORKDIR /app
+COPY . /app
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
