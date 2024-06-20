@@ -12,4 +12,7 @@ RUN apt-get update &&\
     npm install
 COPY mods.sh /mods.sh
 RUN chmod 744 /mods.sh
-CMD ["/bin/bash","/mods.sh"]
+#CMD ["/bin/bash","/mods.sh"]
+COPY mods.sh /usr/local/bin/
+ENTRYPOINT ["mods.sh"]
+CMD [ "node", "index.js" ]
